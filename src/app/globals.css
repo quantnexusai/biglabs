@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(86, 130, 177, 0.3);
+    color: #FFE8DB;
+  }
+}
+
+@layer components {
+  /* === BUTTONS === */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-horizon text-white font-sans font-semibold text-sm tracking-wide uppercase
+           transition-all duration-300 ease-out
+           hover:bg-horizon-dark hover:shadow-[0_0_30px_rgba(86,130,177,0.4)]
+           active:scale-[0.98];
+  }
+
+  .btn-warmth {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-warmth text-void font-sans font-semibold text-sm tracking-wide uppercase
+           transition-all duration-300 ease-out
+           hover:bg-warmth-dark hover:shadow-[0_0_30px_rgba(255,232,219,0.4)]
+           active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-transparent text-white border border-carbon-700
+           font-sans font-semibold text-sm tracking-wide uppercase
+           transition-all duration-300 ease-out
+           hover:border-horizon hover:text-horizon
+           active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           bg-transparent text-carbon-300 font-sans text-sm
+           transition-all duration-200
+           hover:text-white hover:bg-carbon-900;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-red-600 text-white font-sans font-semibold text-sm tracking-wide uppercase
+           transition-all duration-300 ease-out
+           hover:bg-red-700
+           active:scale-[0.98];
+  }
+
+  /* === CARDS === */
+  .card {
+    @apply bg-carbon-900 border border-carbon-800 p-6
+           transition-all duration-300
+           hover:border-horizon/40 hover:shadow-[0_0_20px_rgba(86,130,177,0.1)];
+  }
+
+  .card-highlight {
+    @apply bg-carbon-900 border border-horizon/30 p-6
+           shadow-[0_0_20px_rgba(86,130,177,0.1)];
+  }
+
+  .card-warmth {
+    @apply bg-warmth text-void p-6;
+  }
+
+  /* === FORM INPUTS === */
+  .input {
+    @apply w-full px-4 py-3 bg-carbon-950 border border-carbon-800 text-white font-mono text-sm
+           placeholder:text-carbon-500
+           focus:outline-none focus:border-horizon focus:ring-1 focus:ring-horizon/50
+           transition-all duration-200;
+  }
+
+  .textarea {
+    @apply w-full px-4 py-3 bg-carbon-950 border border-carbon-800 text-white font-mono text-sm
+           placeholder:text-carbon-500 resize-y
+           focus:outline-none focus:border-horizon focus:ring-1 focus:ring-horizon/50
+           transition-all duration-200;
+    min-height: 120px;
+  }
+
+  .select {
+    @apply w-full px-4 py-3 bg-carbon-950 border border-carbon-800 text-white font-mono text-sm
+           focus:outline-none focus:border-horizon focus:ring-1 focus:ring-horizon/50
+           transition-all duration-200 appearance-none cursor-pointer;
+  }
+
+  .label {
+    @apply block text-sm font-mono text-carbon-300 mb-1.5 uppercase tracking-wider;
+  }
+
+  /* === NAVIGATION === */
+  .nav-link {
+    @apply text-sm font-mono text-carbon-300 uppercase tracking-wider
+           transition-all duration-200
+           hover:text-warmth;
+  }
+
+  .nav-link-active {
+    @apply text-sm font-mono text-warmth uppercase tracking-wider;
+  }
+
+  /* === BLUEPRINT GRID OVERLAY === */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(115, 158, 201, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(115, 158, 201, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* === SECTIONS === */
+  .section-dark {
+    @apply bg-void py-20 lg:py-32;
+  }
+
+  .section-elevated {
+    @apply bg-carbon-950 py-20 lg:py-32;
+  }
+
+  .section-warmth {
+    @apply bg-warmth text-void py-20 lg:py-32;
+  }
+
+  /* === BADGES === */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-mono uppercase tracking-widest
+           border border-horizon/30 text-horizon;
+  }
+
+  .badge-warmth {
+    @apply inline-flex items-center px-3 py-1 text-xs font-mono uppercase tracking-widest
+           bg-warmth/10 text-warmth border border-warmth/20;
+  }
+
+  /* === TABLE === */
+  .table-header {
+    @apply text-xs font-mono uppercase tracking-wider text-carbon-400 bg-carbon-950 px-4 py-3 text-left;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 text-sm font-mono text-carbon-200 border-t border-carbon-800;
+  }
+
+  /* === STATUS === */
+  .status-pending {
+    @apply inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-yellow-400;
+  }
+
+  .status-confirmed {
+    @apply inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-horizon-light;
+  }
+
+  .status-completed {
+    @apply inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-400;
+  }
+
+  .status-cancelled {
+    @apply inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-red-400;
+  }
+}
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5682B1;
+}
+
+/* === ANIMATIONS === */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes border-trace {
+  0% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
+  25% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+  50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%); }
+  75% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(86, 130, 177, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(86, 130, 177, 0.25); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === HOVER MICRO-INTERACTIONS === */
+.micro-expand {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.micro-expand:hover {
+  transform: scale(1.02);
+}
+
+/* === FOCUS ZONE (high contrast data area) === */
+.focus-zone {
+  @apply bg-warmth text-void p-8;
+  position: relative;
+}
+
+.focus-zone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5682B1, transparent);
+}
